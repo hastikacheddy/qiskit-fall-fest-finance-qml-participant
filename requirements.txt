@@ -1,0 +1,22 @@
+# Quantum ML for Finance workshop - QubitHub Qiskit Fall Fest 2026
+# ONE pinned environment shared by the instructor notebook, the student notebook and instructor_solutions.py.
+# These are the exact versions the notebooks were executed with (Windows 11, CPython 3.11.9, clean virtual environment).
+# Install:  pip install -r requirements.txt
+#
+# Qiskit 2.x needs NumPy >= 2 (NumPy 1.26 + Qiskit 2.5 failed with "ValueError: NoneType copy mode not allowed").
+# On Google Colab the notebooks' setup cell only installs what is missing and prints a notice if your versions differ
+# from the pins below; metrics may then differ slightly in the last decimals. Colab was NOT tested.
+
+# --- experiment ---------------------------------------------------------------
+numpy==2.4.6
+pandas==3.0.6
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+seaborn==0.13.2
+qiskit==2.6.0
+pylatexenc==2.11        # needed by Qiskit's matplotlib circuit drawer
+
+# --- notebook runtime (not needed on Colab) -----------------------------------
+jupyterlab==4.6.4
+ipykernel==7.4.0
