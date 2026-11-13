@@ -5,7 +5,8 @@
 #
 # Qiskit 2.x needs NumPy >= 2 (NumPy 1.26 + Qiskit 2.5 failed with "ValueError: NoneType copy mode not allowed").
 # On Google Colab the notebooks' setup cell only installs what is missing and prints a notice if your versions differ
-# from the pins below; metrics may then differ slightly in the last decimals. Colab was NOT tested.
+# from the pins below. Colab was tested once (2026-11-12): the notebook runs there without errors, but the quantum
+# model's numbers differ slightly from a pinned local run (see README.md, "Verification status").
 
 # --- experiment ---------------------------------------------------------------
 numpy==2.4.6

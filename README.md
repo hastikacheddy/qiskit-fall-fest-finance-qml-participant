@@ -53,6 +53,13 @@ The call duration is dropped (it is only known after the call, so keeping it wou
 * Three models next to a do-nothing reference: logistic regression on all rows and features, a **matched** logistic regression that sees exactly the rows and features the circuit sees, and the **variational quantum classifier** (4 qubits, angle encoding, 24 trainable angles, trained with COBYLA, simulated exactly without noise).
 * Uncertainty: bootstrap intervals, and a paired bootstrap for the differences between models.
 
+## Verification status
+
+* The notebook was run top to bottom with the instructor's reference solutions loaded, in a clean Windows environment built from `requirements.txt` (Python 3.11): 0 errors, and identical numbers on every repeat.
+* It was also run top to bottom on a real Google Colab CPU runtime on 2026-11-12 (Python 3.13 and Colab's own library versions; the setup cell installed Qiskit): 0 errors, about 75 seconds of compute after the installation.
+* On Colab the two logistic-regression rows were identical to the Windows run, but the quantum model's numbers differed slightly: its test ROC-AUC was 0.776 instead of 0.770 and, with it, the paired comparison between the quantum model and the matched logistic regression changed its verdict. The library versions do not explain this (the Windows run reproduces its numbers exactly with Colab's versions installed); the most likely cause is that floating-point arithmetic differs a little between machines and the derivative-free optimiser amplifies the difference into a different trained circuit. Your own numbers may differ again. If the two logistic-regression rows match your instructor's and only the quantum row differs, nothing is wrong.
+* Not tested: macOS, Linux outside Colab, Python 3.12 or newer outside Colab, a live classroom.
+
 ## What is in this repository
 
 | File | What it is |
